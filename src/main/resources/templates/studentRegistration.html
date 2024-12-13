@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Student Registration</h2>
+    <form th:action="@{/studentRegistration}" method="post" th:object="${estudante}">
+        <div class="form-group">
+            <label for="nomeCompleto">Full Name:</label>
+            <input type="text" class="form-control" id="nomeCompleto" th:field="*{nomeCompleto}" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Phone:</label>
+            <input type="text" class="form-control" id="telefone" th:field="*{telefone}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" th:field="*{email}" required>
+        </div>
+        <div class="form-group">
+            <label for="dataNascimento">Birth Date:</label>
+            <input type="date" class="form-control" id="dataNascimento" th:field="*{dataNascimento}" required>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" class="form-control" id="cep" th:field="*{cep}" required>
+        </div>
+        <div class="form-group">
+            <label for="cidade">City:</label>
+            <input type="text" class="form-control" id="cidade" th:field="*{cidade}" required>
+        </div>
+        <div class="form-group">
+            <label for="curso">Course:</label>
+            <input type="text" class="form-control" id="curso" th:field="*{curso}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

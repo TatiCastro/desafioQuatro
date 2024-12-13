@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Review Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Review Registration</h2>
+    <div>
+        <p><strong>Full Name:</strong> <span th:text="${estudante.nomeCompleto}"></span></p>
+        <p><strong>Phone:</strong> <span th:text="${estudante.telefone}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${estudante.email}"></span></p>
+        <p><strong>Birth Date:</strong> <span th:text="${estudante.dataNascimento}"></span></p>
+        <p><strong>CEP:</strong> <span th:text="${estudante.cep}"></span></p>
+        <p><strong>City:</strong> <span th:text="${estudante.cidade}"></span></p>
+        <p><strong>Course:</strong> <span th:text="${estudante.curso}"></span></p>
+    </div>
+    <form th:action="@{/studentRegistration/confirm}" method="post">
+        <button type="submit" class="btn btn-success">Confirm</button>
+    </form>
+    <form th:action="@{/studentRegistration/edit}" method="post" th:object="${estudante}">
+        <button type="submit" class="btn btn-warning">Edit</button>
+    </form>
+    <form th:action="@{/studentRegistration/cancel}" method="post">
+        <button type="submit" class="btn btn-danger">Cancel</button>
+    </form>
+</div>
+</body>
+</html>
